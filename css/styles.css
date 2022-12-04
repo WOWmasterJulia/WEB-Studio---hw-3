@@ -109,27 +109,53 @@ h1, h2, h3, h4, h5, h6, p {
 .logo-header {
     color: var(--title-text-color);
 }
-.contact-nav a {
-    color: var(--primary-text-color);
+
+
+.site-nav {
+    display: flex;
 }
-.nav-link,
-.nav-link-current {
-    text-decoration: none;
+
+/* .site-nav .item {
+    margin-right: 40px;
+} */
+.site-nav .item:not(:last-child) {
+    margin-right: 40px;
+}
+
+.main-nav {
+    display: flex;
+}
+.site-nav .nav-link {
     color: var(--title-text-color);
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
 }
-.site-nav .nav-link-current {
-    color: var(--accent-color);
+.site-nav .nav-link.current {
+    color: var(--accent-color);  
 }
-.nav-link-current:hover,
+.nav-link.current:hover,
 .nav-link:hover {
     color: var(--primary-text-color);
 }
-.nav-link-current:focus, .nav-link:focus {
+.nav-link.current:focus, .nav-link:focus {
     color: var(--accent-color);
 }
+
+.contact-nav {
+    display: flex;
+}
+.contact-nav .item +.item {
+    margin-left: 40px;
+}
+/* .contact-nav a {
+    color: var(--primary-text-color);
+} */
 .contact-nav-link {
     text-decoration: none;
     color: var(--primary-text-color);
@@ -141,6 +167,8 @@ h1, h2, h3, h4, h5, h6, p {
 .contact-nav-link:hover, .contact-nav-link:focus {
     color: var(--accent-color);
 }
+
+
 
 /* Главный экран HERO */
 .hero {
