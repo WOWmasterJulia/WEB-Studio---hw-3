@@ -82,8 +82,8 @@ h1, h2, h3, h4, h5, h6, p {
     /* text-transform: uppercase; */
     margin-top: 0;
     margin-bottom: 8px;
+    
 }
-
 .section-title-team {
     text-align: center;
 }
@@ -120,9 +120,6 @@ h1, h2, h3, h4, h5, h6, p {
     margin-left: 77px;
 }
 
-/* .site-nav .item {
-    margin-right: 40px;
-} */
 .site-nav .item:not(:last-child) {
     margin-right: 40px;
 }
@@ -219,30 +216,47 @@ h1, h2, h3, h4, h5, h6, p {
 /* Преимущества "FEATURE" */
 .feature-list {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    /* list-style: none; */
+     
 }
 .feature-list .item {
-    width: 300px;
+    width: 264px;
     background-color: tomato;
-
+    margin-right: 24px;
 }
+.feature-list .item:nth-child(4n) {
+    margin-right: 0;
+}
+
 .feature-list p {
     margin-top: 0;
     margin-bottom: 0;
 }
 
+
 /* Услуги SERVICES */
+.services {
+    display: flex;
+    width: 360px;
+    background-color: tomato;
+    margin-right: 24px;
+}
+.services .item:nth-child(3n) {
+    margin-right: 0;
+}
+
 
 /* Наша команда TEAM */
 .section-team {
     background-color: var(--second-bg-color);
 }
 
-.team-list p {
+.team .list p {
     /* display: inline-block; */
     margin-top: 0;
     margin-bottom: 32px;
-    /* ___ тут наверное padding ___ */
+    /* ___ тут наверное padding ?___ */
 }
 
 
@@ -263,6 +277,27 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* PORTFOLIO */
 
+.container-portfolio {
+    display: flex;
+} 
+.work-list {
+    display: block;
+    flex-wrap: wtap;
+}
+.work-list .item {
+    display: block;
+    width: 360px;
+    background-color: tomato;
+    margin-right: 24px;
+    margin-bottom: 48px;
+}
+
+.work-list .item:nth-child(3n) {
+    margin-right: 0; 
+}
+.work-list .item:nth-child(-n+3) {
+    margin-bottom: 0;
+}
 .section-portfolio {
     padding-top: 96px;
     padding-bottom: 120px;
@@ -280,6 +315,7 @@ h1, h2, h3, h4, h5, h6, p {
     text-align: center;
     letter-spacing: 0.04em;
 }
+
 .filter-button:hover {
     background-color: var(--accent-color);
     color: var(--text-white-color);
