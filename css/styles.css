@@ -86,9 +86,7 @@ img {
     margin-top: 0;
     margin-bottom: 8px;    
 }
-.section-title-team {
-    text-align: center;
-}
+
 .visually-hidden {
     position: absolute;
     white-space: nowrap;
@@ -177,6 +175,7 @@ img {
 .hero {
     background-color: var(--footer-bg-color);
     text-align: center;
+    padding: 192px 474px;
 }
 .hero-title {
     color: var(--text-white-color);
@@ -213,9 +212,10 @@ img {
 
 
 /* ---Преимущества "FEATURE"--- */
-.feature {
+
+/* .feature {
     display: flex;
-}
+} */
 .feature-list {
     display: flex;
     /* flex-wrap: wrap; */
@@ -238,9 +238,12 @@ img {
 /* ----Услуги SERVICES---- */
 .services {
     display: flex;
+    background-color: tomato;   
+}
+.services .item {
     width: 360px;
-    background-color: tomato;
     margin-right: 24px;
+    margin-bottom: 120px;
 }
 .services .item:nth-child(3n) {
     margin-right: 0;
@@ -251,12 +254,23 @@ img {
 .section-team {
     background-color: var(--second-bg-color);
 }
-
+.team {
+    display: flex;
+    background-color: tomato;
+}
+.team .item {
+    width: 264px;
+    margin-right: 24px;
+}
+.services .item:nth-child(4n) {
+    margin-right: 0;
+}
+.team-content {
+    text-align: center;
+    padding: 32px 16px;
+}
 .team .list p {
-    /* display: inline-block; */
-    margin-top: 0;
-    margin-bottom: 32px;
-    /* ___ тут наверное padding ?___ */
+    /* margin-top: 0;   */
 }
 
 
