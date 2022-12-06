@@ -59,6 +59,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin-top: 0;
     margin-bottom: 0;
 }
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 /* Заголовки Главной */
 .section-title {
@@ -177,7 +182,6 @@ h1, h2, h3, h4, h5, h6, p {
 /* Главный экран HERO */
 .hero {
     background-color: var(--footer-bg-color);
-
     text-align: center;
 }
 .hero-title {
@@ -277,22 +281,53 @@ h1, h2, h3, h4, h5, h6, p {
 
 /* PORTFOLIO */
 
-.container-portfolio {
-    display: flex;
-} 
-.work-list {
-    display: block;
-    flex-wrap: wtap;
+/* .container {
+    width: 1128px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+} */
+
+/* __1__ 
+(container filter)*/
+.filter {
+    background-color: green;
+    margin-bottom: 72px;    
 }
-.work-list .item {
-    display: block;
-    width: 360px;
-    background-color: tomato;
-    margin-right: 24px;
-    margin-bottom: 48px;
+.filters-button {
+    display: flex;
+    flex-wrap: wrap;
+}
+.filters-button .item:not(:last-child) {
+    margin-right: 24px;   
 }
 
-.work-list .item:nth-child(3n) {
+/* __2__ 
+(container portfolio)*/
+.portfolio {
+    background-color: tomato; 
+} 
+/* (work-list) */   
+.work-list {
+    outline: 1px solid #000;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -24px; 
+    margin-top: -48px;
+}
+/* (work-list item) */
+.work-list > .item {
+    outline: 1px solid blue; 
+    margin-left: 24px;  
+    margin-top: 48px; 
+    flex-basis: calc(100% / 3 - 24px);
+}
+
+/* .work-list .item:nth-child(3n) {
     margin-right: 0; 
 }
 .work-list .item:nth-child(-n+3) {
@@ -301,7 +336,7 @@ h1, h2, h3, h4, h5, h6, p {
 .section-portfolio {
     padding-top: 96px;
     padding-bottom: 120px;
-}
+} */
 .filter-button {
     background-color: var(--second-bg-color);
     color: var(--accent-color);
@@ -346,11 +381,6 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-
     margin-top: 0;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
 }
-
-
-
-
