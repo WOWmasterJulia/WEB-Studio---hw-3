@@ -34,11 +34,16 @@ body {
     margin: 0;
 }
 .container {
-    width: 1128px;
+    width: 1168px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
+
+    /*
+    как правильно?
+    max-width: 1128; 
+    margin: 0 auto; */
 }
 .section-feature, .section-team {
     padding-top: 120px;
