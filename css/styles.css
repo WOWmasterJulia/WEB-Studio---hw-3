@@ -52,7 +52,7 @@ body {
 }
 .list {
     list-style: none;
-    /* Так? Или нет падинги обнулить? */
+    /* Так Или нет? Все падинги обнулить? или тут просто паддинг 0, марджин (все) 0? */
     padding: 0; 
     margin-top: 0;
     margin-bottom: 0;
@@ -107,6 +107,7 @@ img {
 /* ------Шапка Site NAV------ */
 /* --LOGO-- */
 .logo {
+    display: block;
     font-family: 'Raleway', sans-serif;
     text-decoration: none;
     color: var(--accent-color);
@@ -178,8 +179,11 @@ img {
 /* ----Главный экран HERO---- */
 .hero {
     background-color: var(--footer-bg-color);
-    text-align: center;
-    padding: 192px 474px;
+    padding-top: 192px; 
+    padding-bottom: 192px;
+    /* justify-content: center; 
+    ПОчему контент не становится в середину экрана?*/
+    
 }
 .hero-title {
     color: var(--text-white-color);
@@ -187,6 +191,11 @@ img {
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
+    width: 492px;
+    text-align: center;
+    margin-bottom: 48px;
+    margin: 0 auto;
+    
 }
 .button {
     background-color: var(--accent-color);
@@ -199,12 +208,13 @@ img {
     font-weight: 500;
     font-size: 16px;
     line-height: 1.18;
-    /* display: flex; */
-    align-items: center;
+    align-items: center; 
     text-align: center;
     letter-spacing: 0.04em;
     display: inline-block; 
     padding: 16px 32px;
+    /* кнопке ничего не помогло встать в центр. Почему? */
+    
 }
 .button:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -217,9 +227,6 @@ img {
 
 /* ---Преимущества "FEATURE"--- */
 
-/* .feature {
-    display: flex;
-} */
 .feature-list {
     display: flex;
     /* flex-wrap: wrap; */
@@ -247,7 +254,6 @@ img {
 .services .item {
     width: 360px;
     margin-right: 24px;
-    margin-bottom: 120px;
 }
 .services .item:nth-child(3n) {
     margin-right: 0;
@@ -265,6 +271,7 @@ img {
 .team .item {
     width: 264px;
     margin-right: 24px;
+    background-color: var(--primary-bg-color);
 }
 .services .item:nth-child(4n) {
     margin-right: 0;
@@ -273,13 +280,12 @@ img {
     text-align: center;
     padding: 32px 16px;
 }
-.team .list p {
-    /* margin-top: 0;   */
-}
 
 
 /* ------Подвал FOOTER------ */
 .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
     background-color: var(--footer-bg-color);
 }
 .logo-footer {
@@ -287,19 +293,13 @@ img {
 }
 .footer-text {
     color: var(--text-footer-white);
+    width: 264px;
+    margin-top: 16px;
 }
 
 
 
 /* ======СТР."ПОРТФОЛИО"====== */
-
-/* .container {
-    width: 1128px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-} */
 
 /* Скрытый заголовок на стр Портфолио */
 /* .portfolio-section-title {
@@ -309,13 +309,15 @@ img {
 
 /* _____1_____ 
 (container filter)*/
-.filter {
-    background-color: green;
-    margin-bottom: 72px;    
-}
+
 .filters-button {
     display: flex;
-    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    /* Так можно писать - и марджин 0, и марджин-боттом сразу? */
+    margin-bottom: 72px;
+    
 }
 .filters-button .item:not(:last-child) {
     margin-right: 24px;   
@@ -332,6 +334,7 @@ img {
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.04em;
+    padding: 8px 16px;
 }
 .filter-button:hover {
     background-color: var(--accent-color);
@@ -353,33 +356,38 @@ img {
 
 /* ____2_____ 
 (container portfolio)*/
-.portfolio {
-    background-color: tomato;  
-} 
-/* (work-list) */   
+  
 .work-list {
     outline: 1px solid #000; 
-    padding: 0;
-    margin: 0;
-    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    margin-left: -24px; 
-    margin-top: -48px;
-}
-/* (work-list item) */
+    row-gap: 48px;
+    column-gap: 24px;
+   }
+
 .work-list > .item {
-    outline: 1px solid blue;  
-    margin-left: 24px;  
-    margin-top: 48px; 
-    flex-basis: calc(100% / 3 - 24px);
+    outline: 1px solid blue; 
+
+    /* margin-right: 24px;  
+    margin-top: 48px;  */
+
+    /* flex-basis: calc(100% / 3 - 24px); */
+
+    padding-top: 0;
+
+    flex-basis: calc((100%  - 48px) /3);
 }
-/* .work-list .item:nth-child(3n) {
-    margin-right: 0; 
+
+/* Это правило - не нужен правый отступ у каждого 3-го элемента - не срабатывает: */
+.work-list .item:nth-child(3n) {
+    padding-right: 0; 
 }
+
 .work-list .item:nth-child(-n+3) {
-    margin-bottom: 0;
-}*/
+    margin-top: 0;
+    padding-bottom: 0;
+} 
+
 .section-portfolio {
     padding-top: 96px;
     padding-bottom: 120px;
