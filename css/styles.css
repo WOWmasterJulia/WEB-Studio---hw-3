@@ -125,7 +125,7 @@ img {
     display: flex;
     margin-left: 77px;
 }
-.site-nav .item:not(:last-child) {
+.nav .item:not(:last-child) {
     margin-right: 40px;
 }
 .main-nav {
@@ -358,7 +358,6 @@ img {
 (container portfolio)*/
   
 .work-list {
-    outline: 1px solid #000; 
     display: flex;
     flex-wrap: wrap;
     row-gap: 48px;
@@ -366,8 +365,6 @@ img {
    }
 
 .work-list > .item {
-    outline: 1px solid blue; 
-
     /* margin-right: 24px;  
     margin-top: 48px;  */
 
@@ -379,9 +376,9 @@ img {
 }
 
 /* Это правило - не нужен правый отступ у каждого 3-го элемента - не срабатывает: */
-.work-list .item:nth-child(3n) {
+/* .work-list .item:nth-child(3n) {
     padding-right: 0; 
-}
+} */
 
 .work-list .item:nth-child(-n+3) {
     margin-top: 0;
@@ -407,5 +404,7 @@ img {
     padding-top: 32px;
     padding-bottom: 32px;
     padding-left: 16px;
+    /* Бордер применился со всех сторон, и сверху тоже. Как исправить? */
+    border: 0.5px solid #F4F4FD;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
