@@ -226,7 +226,6 @@ img {
 }
 .feature-list .item {
     width: 264px;
-    background-color: tomato;
     margin-right: 24px;
 }
 .feature-list .item:nth-child(4n) {
@@ -240,8 +239,7 @@ img {
 
 /* ----Услуги SERVICES---- */
 .services {
-    display: flex;
-    background-color: tomato;   
+    display: flex;   
 }
 .services .item {
     width: 360px;
@@ -258,7 +256,6 @@ img {
 }
 .team {
     display: flex;
-    background-color: tomato;
 }
 .team .item {
     width: 264px;
@@ -356,14 +353,12 @@ portfolio)*/
 .work-list > .item {
     /* margin-right: 24px;  
     margin-top: 48px;  */
-
     /* flex-basis: calc(100% / 3 - 24px); */
-
     padding-top: 0;
     flex-basis: calc((100%  - 48px) /3);
 }
 
-/* Это правило - не нужен правый отступ у каждого 3-го элемента - не срабатывает: */
+/* Это правило - не нужен правый отступ у каждого 3-го элемента (а у других по 24рх) - не срабатывает: */
 /* .work-list .item:nth-child(3n) {
     padding-right: 0; 
 } */
@@ -392,7 +387,6 @@ portfolio)*/
     padding-top: 32px;
     padding-bottom: 32px;
     padding-left: 16px;
-    /* Бордер применился со всех сторон, и сверху тоже. Как исправить? */
     border: 0.5px solid #F4F4FD;
     border-top: none;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
