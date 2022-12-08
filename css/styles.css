@@ -5,7 +5,6 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
-    /* может тут надо прописать 1 раз эти нулевые падинги и марджины? Если да, то где тогда можно поубирать их? */
 }
 
 :root {
@@ -52,10 +51,8 @@ body {
 }
 .list {
     list-style: none;
-    /* Так Или нет? Все падинги обнулить? или тут просто паддинг 0, марджин (все) 0? */
     padding: 0; 
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;   
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -180,10 +177,7 @@ img {
 .hero {
     background-color: var(--footer-bg-color);
     padding-top: 192px; 
-    padding-bottom: 192px;
-    /* justify-content: center; 
-    ПОчему контент не становится в середину экрана?*/
-    
+    padding-bottom: 192px;  
 }
 .hero-title {
     color: var(--text-white-color);
@@ -193,9 +187,8 @@ img {
     letter-spacing: 0.02em;
     width: 492px;
     text-align: center;
-    margin-bottom: 48px;
     margin: 0 auto;
-    
+    margin-bottom: 48px;
 }
 .button {
     background-color: var(--accent-color);
@@ -211,10 +204,9 @@ img {
     align-items: center; 
     text-align: center;
     letter-spacing: 0.04em;
-    display: inline-block; 
+    display: block; 
     padding: 16px 32px;
-    /* кнопке ничего не помогло встать в центр. Почему? */
-    
+    margin: 0 auto; 
 }
 .button:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -308,16 +300,14 @@ img {
 
 
 /* _____1_____ 
-(container filter)*/
+(filter)*/
 
 .filters-button {
     display: flex;
     margin: 0;
     padding: 0;
     justify-content: center;
-    /* Так можно писать - и марджин 0, и марджин-боттом сразу? */
-    margin-bottom: 72px;
-    
+    margin-bottom: 72px;    
 }
 .filters-button .item:not(:last-child) {
     margin-right: 24px;   
@@ -353,9 +343,8 @@ img {
     letter-spacing: 0.02em;
 }
 
-
 /* ____2_____ 
-(container portfolio)*/
+portfolio)*/
   
 .work-list {
     display: flex;
@@ -371,7 +360,6 @@ img {
     /* flex-basis: calc(100% / 3 - 24px); */
 
     padding-top: 0;
-
     flex-basis: calc((100%  - 48px) /3);
 }
 
@@ -406,5 +394,6 @@ img {
     padding-left: 16px;
     /* Бордер применился со всех сторон, и сверху тоже. Как исправить? */
     border: 0.5px solid #F4F4FD;
+    border-top: none;
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
